@@ -103,7 +103,7 @@ $idsolicitud = $_GET['idsolicitud'];
             <thead>
               <tr>
               <th>
-                <th scope="col">Nombre docente</th>
+                <th scope="col">Nombre doctor</th>
                 <th scope="col">Apellidos</th>
                 <th scope="col">Correo</th>
                 <th scope="col" colspan="1">Asignarlo</th>
@@ -119,7 +119,7 @@ $idsolicitud = $_GET['idsolicitud'];
                     <td scope="row"><?php echo $dato->nombre; ?></td>
                     <td><?php echo $dato->apellido; ?></td>
                     <td><?php echo $dato->correo; ?></td>
-                    <td><a onclick="return confirm('¿Estas Seguro de asignar este docente?')" class="text-danger" href="asignarpro.php?id=<?php echo $dato->codigo; ?>&idsolicitud=<?php echo $idsolicitud; ?>"><i class="bi bi-pencil"></a></td>
+                    <td><a onclick="return confirm('¿Estas Seguro de asignar este doctor?')" class="text-danger" href="asignarpro.php?id=<?php echo $dato->codigo; ?>&idsolicitud=<?php echo $idsolicitud; ?>"><i class="bi bi-pencil"></a></td>
                     </tr>
 
               <?php

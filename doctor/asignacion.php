@@ -128,9 +128,9 @@ if($result->num_rows > 0){
           <table class="table aling-middle">
             <thead>
               <tr>
-                <th scope="col">Estudiante</th>
+                <th scope="col">Paciente</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Proyecto</th>
+                <th scope="col">tipo de doctor</th>
                 <th scope="col">Asunto</th>
               </tr>
             </thead>

@@ -100,7 +100,7 @@ if (!isset($_SESSION['usuario'])) {
       </div>
       <div class="card">
         <did class="card-header">
-          <div class="text-center">Información del estudiante
+          <div class="text-center">Información del Paciente
           </div>
         </did>
         <div class="p-4">
