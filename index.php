@@ -251,8 +251,7 @@
               <hr>
               <h2 class="card-text text-center">Call center 317 645 2713</h2><br>
 
-              <!-- Button 
-              <a href="estudiante/index.php" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">REGISTRARSE</a><br>-->
+             
             </div>
           </div>
           <!-- Card -->
@@ -282,7 +281,6 @@
 
 
       <div align="center" class="text-light">
-        <img src="imagenes/udenar.png" width="120" style="color: white;">
       </div>
     </div>
     <div style="background-color: rgb(1, 63, 42);">
