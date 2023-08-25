@@ -216,5 +216,4 @@ if (!isset($_SESSION['usuario'])) {
   </div>
 </div>
 
-<?php include '../template/footer.php.' ?>
         

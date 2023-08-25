@@ -65,4 +65,3 @@ include_once "../model/conect.php";
           </div>
         </form>
       </div>
-<?php include '../template/footer.php' ?>
