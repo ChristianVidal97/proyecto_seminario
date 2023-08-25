@@ -24,7 +24,7 @@ $idest=0;
 $msg="";
 $comentario='No hay comentarios';
 
-$sql = "SELECT * FROM solicitudes WHERE idDocente = '$codigo'";
+$sql = "SELECT * FROM solicitudes WHERE idDoctor = '$codigo'";
 $result = $mysqli->query($sql);
 // print_r($result);
 if($result->num_rows > 0){
@@ -32,18 +32,16 @@ if($result->num_rows > 0){
     $idest=$row['solicitante'];
     $nombredoc=$row['nombredoc'];
     $asunto=$row['asunto'];
-    $calificacion=$row['calificacion'];
     $comentario=$row['comentarios'];
     $url=$row['url'];
     
     $solicitud=$row['solicitud'];
     $idsolicitud=$row['idsolicitud'];
   }
-  $sql2 = "SELECT * FROM estudiante WHERE codigo = '$idest'";
-  $estudiante = $mysqli->query($sql2);
-  while ($row=$estudiante->fetch_assoc() ) {
+  $sql2 = "SELECT * FROM paciente WHERE id = '$idest'";
+  $paciente = $mysqli->query($sql2);
+  while ($row=$paciente->fetch_assoc() ) {
     $nombre=$row['nombre'].' '.$row['apellido'];
-    $programa=$row['programa'].' Facultad: '.$row['facultad'] ;
     $correo=$row['correo'];    
   }
   
@@ -127,31 +125,27 @@ if($result->num_rows > 0){
       <div class="card">
         <div class="card-header">
           <div class="text-center">
-            Proyecto Asignado
+            cita asignada
           </div>
         </div>
         <?php if($result->num_rows > 0){ ?>
-          <div class="text-center">Datos del estudiante y proyecto</div>
+          <div class="text-center">datos del paciente y la cita</div>
         <div class="p-6 table-responsive">
           <table class="table aling-middle">
             <thead>
               <tr>
                 <th scope="col">Estudiante</th>
-                <th scope="col">Programa - Facultad</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Proyecto</th>
                 <th scope="col">Asunto</th>
-                <th scope="col">Calificación</th>
               </tr>
             </thead>
             <tbody>
                   <tr>
                     <td scope="row"><?php echo $nombre; ?></td>
-                    <td><?php echo $programa; ?></td>
                     <td><?php echo $correo; ?></td>
                     <td><?php echo $nombredoc; ?></td>
                     <td><?php echo $asunto; ?></td>
-                    <td><?php echo $calificacion; ?></td>
                   </tr>
             </tbody>
           </table>
@@ -170,18 +164,18 @@ if($result->num_rows > 0){
         </div>
         <div class="card-body">
           <div class="text-center">
-            <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">Proyecto asignado</a>
+            <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">Documento del paciente</a>
           
           </div>
         </div>
         <?php } }else{ ?>
           <div class="text-center">
-            No tienes Proyecto Asignado
+            No tienes Paciente asignado
           </div>
         <?php } ?>
 
         <div class="card-footer">
-            <a href="homesdocente.php" class="btn btn-outline-danger w-100 ">Regresar <i class="bi bi-box-arrow-left"></i></a>
+            <a href="homesdoctor.php" class="btn btn-outline-danger w-100 ">Regresar <i class="bi bi-box-arrow-left"></i></a>
           </div>
       </div>
     </div>

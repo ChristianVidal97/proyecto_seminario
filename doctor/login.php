@@ -5,7 +5,7 @@
   $usuario = $_POST['user'];
   $password = $_POST['pass'];
 
-  $sql = "SELECT * FROM profesores WHERE documento = '$usuario'";
+  $sql = "SELECT * FROM doctores WHERE documento = '$usuario'";
 
   $resultado = mysqli_query($conexion,$sql);
 
@@ -20,10 +20,10 @@
     $_SESSION['codigo']=$codigo_db;
     $_SESSION['usuario']=$usuario;
     $_SESSION['nombre']=$nombre_bd;
-    header('Location: homesdocente.php?mensaje=loginsuccess');
+    header('Location: homesdoctor.php?mensaje=loginsuccess');
     exit();
   } else {
-    header('Location: ../Docente/index.php?mensaje=errorlogin');
+    header('Location: ../doctor/index.php?mensaje=errorlogin');
     exit();
   }
   

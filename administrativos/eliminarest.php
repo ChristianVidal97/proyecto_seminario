@@ -17,7 +17,7 @@ function eliminarDir($carpeta){
     include '../model/conexion.php';
     $codigo = $_GET['codigo'];
 
-    $sentencia = $bd->prepare("DELETE FROM estudiante where codigo =?;");
+    $sentencia = $bd->prepare("DELETE FROM paciente where codigo =?;");
     $resultado = $sentencia->execute([$codigo]);
 
     if ($resultado === TRUE) {
@@ -25,9 +25,9 @@ function eliminarDir($carpeta){
       if(file_exists($ruta)){
           eliminarDir('../upload/'.$codigo);
       }
-      header('Location: ../administrativos/homestudent.php?mensaje=eliminado');
+      header('Location: ../administrativos/homespacientes.php?mensaje=eliminado');
     } else {
-      header('Location: ../administrativos/homestudent.php?mensaje=error');
+      header('Location: ../administrativos/homespacientes.php?mensaje=error');
       exit();
     }
     

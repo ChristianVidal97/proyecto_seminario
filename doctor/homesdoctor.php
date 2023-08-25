@@ -3,7 +3,7 @@
 
 <?php
 include_once "../model/conexion.php";
-$sentencia = $bd->query("select * from profesores");
+$sentencia = $bd->query("select * from doctores");
 $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 //print_r($persona);
 ?>
@@ -19,7 +19,7 @@ if (!isset($_SESSION['usuario'])) {
 ?>
 <?php
 include "../model/conexion.php";
-$setencia2 = $bd->prepare("select * from profesores where documento =?;");
+$setencia2 = $bd->prepare("select * from doctores where documento =?;");
 $setencia2->execute([$_SESSION['usuario']]);
 $persona3 = $setencia2->fetch(PDO::FETCH_OBJ);
 if (isset($persona3->nombre)) {
@@ -124,19 +124,16 @@ if (isset($persona3->nombre)) {
                     <td scope="row"><?php echo $dato->nombre; ?></td>
                     <td><?php echo $dato->apellido; ?></td>
                     <td><a class="text-success" href="editar.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-pencil-square"></i></a></td>
-                    <td><a onclick="return confirm('¿Estas Seguro de eliminar esta cuenta?')" class="text-danger" href="eliminar.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-trash3-fill"></a></td>
                   </tr>
 
                   <thead>
               <tr>
                 <th scope="col">Documento</th>
-                <th scope="col">Facultad</th>
               </tr>
             </thead>
 
             <tr>
                     <td scope="row"><?php echo $dato->documento; ?></td>
-                    <td><?php echo $dato->facultad; ?></td>
                   </tr>
 
               <?php
@@ -149,11 +146,8 @@ if (isset($persona3->nombre)) {
           
         </form>
               <form class="p-4" >
-              <!-- <a class="btn btn-primary w-100" href="comentario.php" role="button">Realizar comentarios del proyecto asignado</a>
-              <br><br> -->
-              <a class="btn btn-primary w-100" href="asignacion.php" role="button">Revisar Proyecto</a> 
-              <br><br>
-              <a class="btn btn-primary w-100" href="indexcalif.php" role="button">Registrar Calificación y comentarios</a> 
+              <a class="btn btn-primary w-100" href="asignacion.php" role="button">Revisar pacientes</a> 
+              <br>
               </form>
               
         <div class="card-footer">

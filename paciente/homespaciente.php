@@ -147,32 +147,10 @@ if (!isset($_SESSION['usuario'])) {
           <div class="text-center">
           SOLICITUD
           </div>
-          
-          <!--form class="p-4" method="POST" action="solicitud.php"  enctype="multipart/form-data">
-            input class=" mb-3 w-100" type="number" name="ocultaidusuer" placeholder="digite su documento"
-            <div class="mb-3">
-            <input type="number" class="form-control" name="ocultaidusuer" placeholder="digite su documento">
-            </div>
-
-            <input type="text" class="mb-3 form-control" name="txtasunto" required placeholder="Asunto">
-            <textarea type="text" class="form-control" name="txtsolicitud" rows="4" cols="50" 
-            placeholder="Digite su solicitud en max 100 caracteres"></textarea>
-            <div class="mb-3">
-           
-              <label for="formFile" class="form-label aling-middle">Documento grado</label>
-              <input type="text" name="metodo" value="1" hidden>
-              <input class="form-control" type="file" name="docsolicitud" required>
-             
-
-            </div-->
-            <a class="btn btn-outline-success mt-3 w-100" href="../paciente/indexsol.php?id=<?php echo $id; ?>" role="button">Hacer solicitud</a>
-            <!-- <form class="p-4">
-            <tr><th scope="col">Comentario Proyecto: </th></tr>
-            <tr><td><?php echo $dato->opinion; ?></td></tr>
-            </form> -->
+            <a class="btn btn-outline-success mt-3 w-100" href="../paciente/indexsol.php?id=<?php echo $id; ?>" role="button">Hacer Cita</a>
             
             <form class="p-3" >
-            <a class="btn btn-primary  mt-4 w-100" href="../paciente/asignacion.php?id=<?php echo $id; ?>" role="button">Mirar Información del proyecto</a>
+            <a class="btn btn-primary  mt-4 w-100" href="../paciente/asignacion.php?id=<?php echo $id; ?>" role="button">Mirar Información de la cita</a>
             </form>
 
           </form>

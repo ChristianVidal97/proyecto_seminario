@@ -2,7 +2,6 @@
 
 <form class="p-4" >
 <a class="btn btn-primary" href="home.php" role="button">Administrativos</a>
-<!-- <td><a alingn = "center" class="btn btn-primary" href="../estudiante/descargaradm.php" role="button">Descargar Documentos</a></td> -->
 </form>
 
 <?php
@@ -101,11 +100,11 @@ if (!isset($_SESSION['usuario'])) {
             <thead>
               <tr>
               <th>
-                <th scope="col">Identificacion Est</th>
-                <th scope="col">Asunto</th>
-                <th scope="col">Nombre</th>
+                <th scope="col">Identificacion paciente</th>
+                <th scope="col">tipo de medico</th>
+                <th scope="col">dolencia</th>
                 <th scope="col">Opcion</th>
-                <th scope="col">Asignar docente</th>
+                <th scope="col">Asignar doctor</th>
                 
               </tr>
             </thead>

@@ -8,7 +8,7 @@
 
 <?php
 include_once "../model/conexion.php";
-$sentencia = $bd->query("select * from estudiante");
+$sentencia = $bd->query("select * from paciente");
 $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 //print_r($persona);
 ?>
@@ -94,7 +94,7 @@ if (!isset($_SESSION['usuario'])) {
       <div class="card">
         <did class="card-header">
           <div class="text-center">
-            Lista de Estudiantes
+            Lista de Pacientes
           </div>
         </did>
         <div class="p-4">

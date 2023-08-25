@@ -30,10 +30,6 @@
             <input type="text" class="form-control" name="txtApellido" autofocus required>
           </div>
           <div class="mb-3">
-            <label class="form-label">Facultad: </label>
-            <input type="text" class="form-control" name="txtFacultad" autofocus required>
-          </div>
-          <div class="mb-3">
             <label class="form-label">Documento: </label>
             <input type="number" class="form-control" name="txtDocumento" autofocus required>
           </div>

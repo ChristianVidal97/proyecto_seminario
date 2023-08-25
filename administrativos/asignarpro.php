@@ -6,10 +6,10 @@
     $idsol = $_GET["idsolicitud"];
     
     
-    $sentencia = $bd ->prepare("UPDATE solicitudes SET idDocente = ? WHERE idsolicitud=?;");
+    $sentencia = $bd ->prepare("UPDATE solicitudes SET idDoctor = ? WHERE idsolicitud=?;");
     $resultado = $sentencia->execute([$idpro,$idsol]);
 
-    $sentencia2 = $bd ->prepare("UPDATE profesores SET idProyecto = ? WHERE codigo=?;");
+    $sentencia2 = $bd ->prepare("UPDATE doctores SET idProyecto = ? WHERE codigo=?;");
     $resultado2 = $sentencia2->execute([$idsol,$idpro]);
     if ($resultado === TRUE) {
       header('Location: ../administrativos/homesolicitud.php?mensaje=registrado');

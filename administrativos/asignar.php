@@ -6,7 +6,7 @@
 
 <?php
 include_once "../model/conexion.php";
-$sentencia = $bd->query("select * from profesores");
+$sentencia = $bd->query("select * from doctores");
 $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 //print_r($persona);
 ?>
@@ -105,7 +105,6 @@ $idsolicitud = $_GET['idsolicitud'];
               <th>
                 <th scope="col">Nombre docente</th>
                 <th scope="col">Apellidos</th>
-                <th scope="col">Facultad</th>
                 <th scope="col">Correo</th>
                 <th scope="col" colspan="1">Asignarlo</th>
               </tr>
@@ -119,7 +118,6 @@ $idsolicitud = $_GET['idsolicitud'];
                   <th>
                     <td scope="row"><?php echo $dato->nombre; ?></td>
                     <td><?php echo $dato->apellido; ?></td>
-                    <td><?php echo $dato->facultad; ?></td>
                     <td><?php echo $dato->correo; ?></td>
                     <td><a onclick="return confirm('¿Estas Seguro de asignar este docente?')" class="text-danger" href="asignarpro.php?id=<?php echo $dato->codigo; ?>&idsolicitud=<?php echo $idsolicitud; ?>"><i class="bi bi-pencil"></a></td>
                     </tr>

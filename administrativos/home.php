@@ -11,14 +11,14 @@
   </div>
   <div class="d-grid">
     <input type="hidden" name="oculto" value="1">
-    <a href="homestudent.php" class="btn btn-outline-warning m-3">Lista Estudiantes</a>
+    <a href="homespacientes.php" class="btn btn-outline-warning m-3">Pacientes activos</a>
   </div>
   </form>
 </div>
 <div class="container card">
   <div class="d-grid">
     <input type="hidden" name="oculto" value="1">
-    <a href="homesdocente.php" class="btn btn-outline-danger m-3">Lista Docentes</a>
+    <a href="homesdoctor.php" class="btn btn-outline-danger m-3">Lista Doctores</a>
   </div>
   </form>
 </div>

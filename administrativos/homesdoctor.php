@@ -6,7 +6,7 @@
 
 <?php
 include_once "../model/conexion.php";
-$sentencia = $bd->query("select * from profesores");
+$sentencia = $bd->query("select * from doctores");
 $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 //print_r($persona);
 ?>
@@ -102,7 +102,6 @@ if (!isset($_SESSION['usuario'])) {
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Documento</th>
-                <th scope="col">Facultad</th>
                 <th scope="col">Correo</th>
                 <th scope="col" colspan="2">Opciones</th>
                 <!-- <th scope="col">Datos</th>
@@ -120,7 +119,6 @@ if (!isset($_SESSION['usuario'])) {
                     <td scope="row"><?php echo $dato->nombre; ?></td>
                     <td><?php echo $dato->apellido; ?></td>
                     <td><?php echo $dato->documento; ?></td>
-                    <td><?php echo $dato->facultad; ?></td>
                     <td><?php echo $dato->correo; ?></td>
                     <td><a class="text-success" href="editardoc.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-pencil-square"></i></a></td>
                     <td><a onclick="return confirm('¿Estas Seguro de eliminar esta cuenta?')" class="text-danger" href="eliminardoc.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-trash3-fill"></a></td>
