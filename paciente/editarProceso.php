@@ -9,13 +9,11 @@
     $codigo = $_POST['codigo'];
     $nombre = $_POST["txtNombre"];
     $apellido = $_POST["txtApellido"];
-    $programa = $_POST["txtPrograma"];
-    $facultad = $_POST["txtFacultad"];
     $documento = $_POST["txtDocumento"];
     $correo = $_POST["txtCorreo"];
     $password = $_POST["txtPass"];  
-    $sentencia = $bd ->prepare("UPDATE estudiante SET nombre = ?, apellido = ?, programa = ?, facultad = ?, documento = ?, correo = ?, contra = ? where codigo = ?;");
-    $resultado = $sentencia->execute([$nombre,$apellido,$programa,$facultad,$documento,$correo,$password,$codigo]);
+    $sentencia = $bd ->prepare("UPDATE paciente SET nombre = ?, apellido = ?, documento = ?, correo = ?, contra = ? where id = ?;");
+    $resultado = $sentencia->execute([$nombre,$apellido,$documento,$correo,$password,$codigo]);
 
     if ($resultado === TRUE) {
       header('Location: homestudent.php?mensaje=editado');

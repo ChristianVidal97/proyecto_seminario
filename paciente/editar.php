@@ -6,9 +6,9 @@
       exit();
     }      
     include_once '../model/conexion.php';
-    $codigo = $_GET['codigo'];
-    $sentecia = $bd->prepare("select * from estudiante where codigo =?;");
-    $sentecia->execute([$codigo]);
+    $id = $_GET['codigo'];
+    $sentecia = $bd->prepare("select * from paciente where id =?;");
+    $sentecia->execute([$id]);
     $persona = $sentecia->fetch(PDO::FETCH_OBJ);
     //print_r($persona);
 ?>
@@ -29,14 +29,6 @@
             <input type="text" class="form-control" name="txtApellido" required value="<?php echo $persona->apellido; ?>">
           </div>
           <div class="mb-3">
-            <label class="form-label">Programa: </label>
-            <input type="text" class="form-control" name="txtPrograma" required value="<?php echo $persona->programa; ?>">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Facultad: </label>
-            <input type="text" class="form-control" name="txtFacultad" required value="<?php echo $persona->facultad; ?>">
-          </div>
-          <div class="mb-3">
             <label class="form-label">Documento: </label>
             <input type="number" class="form-control" name="txtDocumento" required value="<?php echo $persona->documento; ?>">
           </div>
@@ -49,7 +41,7 @@
             <input type="text" class="form-control" name="txtPass" required value="<?php echo $persona->contra; ?>">
           </div>
           <div class="d-grid">
-            <input type="hidden" name="codigo" value="<?php echo $persona->codigo; ?>">
+            <input type="hidden" name="codigo" value="<?php echo $persona->id; ?>">
             <input type="submit" class="btn btn-primary" value="Guardar Cambios">
           </div>
         </form>

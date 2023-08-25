@@ -165,7 +165,7 @@
               <hr class="my-4">
               <!-- Button -->
               <div align="center">
-                <a href="estudiante/index.php" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">REGISTRARSE</a><br>
+                <a href="paciente/index.php" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">REGISTRARSE</a><br>
               </div>
             </div>
 

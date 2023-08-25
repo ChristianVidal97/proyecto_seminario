@@ -5,7 +5,7 @@
   $usuario = $_POST['user'];
   $password = $_POST['pass'];
 
-  $sql = "SELECT * FROM estudiante WHERE documento = '$usuario'";
+  $sql = "SELECT * FROM paciente WHERE documento = '$usuario'";
 
   $resultado = mysqli_query($conexion,$sql);
 
@@ -19,11 +19,11 @@
   if ($usuario == $usuario_db && $password_db == $password) {
     $_SESSION['usuario']=$usuario;
     $_SESSION['nombre']=$nombre_bd;
-    header('Location: homestudent.php?mensaje=loginsuccess');
+    header('Location: homespaciente.php?mensaje=loginsuccess');
     exit();
   } else {
     echo($password);
-    header('Location: ../estudiante/logi.php?mensaje=errorlogin');
+    header('Location: ../paciente/logi.php?mensaje=errorlogin');
     exit();
   }
 

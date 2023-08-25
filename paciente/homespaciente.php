@@ -2,7 +2,7 @@
 
 <?php
 include_once "../model/conexion.php";
-$sentencia = $bd->query("select * from estudiante");
+$sentencia = $bd->query("select * from paciente");
 $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 //print_r($persona);
 ?>
@@ -117,28 +117,24 @@ if (!isset($_SESSION['usuario'])) {
               foreach ($persona as $dato) {
                 if ($dato->documento == $_SESSION['usuario']) {
                   # code...
-                  $id=$dato->codigo;
+                  $id=$dato->id;
                   // echo $id;
               ?>
                   <tr>
                     <td scope="row"><?php echo $dato->nombre; ?></td>
                     <td><?php echo $dato->apellido; ?></td>
 
-                    <td><a class="text-success" href="editar.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-pencil-square"></i></a></td>
-                    <td><a onclick="return confirm('¿Estas Seguro de eliminar esta cuenta?')" class="text-danger" href="eliminar.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-trash3-fill"></a></td>
+                    <td><a class="text-success" href="editar.php?codigo=<?php echo $dato->id; ?>"><i class="bi bi-pencil-square"></i></a></td>
+                    
                   </tr>
                   <thead>
               <tr>
                 <th scope="col">Documento</th>
-                <th scope="col">Programa</th>
-                <th scope="col">Facultad</th>
-               
+               <td scope="row"><?php echo $dato->documento; ?></td>
               </tr>
             </thead>
             <tr>
-                    <td scope="row"><?php echo $dato->documento; ?></td>
-                    <td><?php echo $dato->programa; ?></td>
-                    <td><?php echo $dato->facultad; ?></td>
+                    
                    
             </tr>
               <?php
@@ -169,14 +165,14 @@ if (!isset($_SESSION['usuario'])) {
              
 
             </div-->
-            <a class="btn btn-outline-success mt-3 w-100" href="../estudiante/indexsol.php?id=<?php echo $id; ?>" role="button">Hacer solicitud</a>
+            <a class="btn btn-outline-success mt-3 w-100" href="../paciente/indexsol.php?id=<?php echo $id; ?>" role="button">Hacer solicitud</a>
             <!-- <form class="p-4">
             <tr><th scope="col">Comentario Proyecto: </th></tr>
             <tr><td><?php echo $dato->opinion; ?></td></tr>
             </form> -->
             
             <form class="p-3" >
-            <a class="btn btn-primary  mt-4 w-100" href="../estudiante/asignacion.php?id=<?php echo $id; ?>" role="button">Mirar Información del proyecto</a>
+            <a class="btn btn-primary  mt-4 w-100" href="../paciente/asignacion.php?id=<?php echo $id; ?>" role="button">Mirar Información del proyecto</a>
             </form>
 
           </form>
@@ -206,14 +202,14 @@ if (!isset($_SESSION['usuario'])) {
           ?>
           <?php
           include "../model/conexion.php";
-          $setencia2 = $bd->prepare("select * from profesores where documento =?;");
+          $setencia2 = $bd->prepare("select * from doctores where documento =?;");
           $setencia2->execute([$idjuradobd]);
           $persona3 = $setencia2->fetch(PDO::FETCH_OBJ);
           //print_r($persona);
           ?>
           <?php
           include "../model/conexion.php";
-          $setencia3 = $bd->prepare("select * from profesores where documento =?;");
+          $setencia3 = $bd->prepare("select * from doctores where documento =?;");
           $setencia3->execute([$idasesorbd]);
           $persona4 = $setencia3->fetch(PDO::FETCH_OBJ);
           //print_r($persona);

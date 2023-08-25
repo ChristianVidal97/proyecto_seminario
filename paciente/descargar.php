@@ -51,7 +51,7 @@ if(isset($_POST['submit'])!=""){
 			$resultado=$mysqli->query($sql1);
 			if($resultado){
 				$mensaje="Se modificó exitosamente";
-				header("location:../estudiante/indexsol.php?id=$Id_Usuario&mensaje=upload");
+				header("location:../paciente/indexsol.php?id=$Id_Usuario&mensaje=upload");
 			}else{
 			    $error="Error al guardar archivo BD...";
 			}
@@ -67,7 +67,7 @@ if(isset($_POST['submit'])!=""){
 			$resultado=$mysqli->query($sql1);
 			if($resultado){
 				$mensaje="Se registró exitosamente";
-				header("location:../estudiante/indexsol.php?id=$Id_Usuario&mensaje=upload");
+				header("location:../paciente/indexsol.php?id=$Id_Usuario&mensaje=upload");
 			}else{
 			    $error="Error al guardar archivo BD";
 			}

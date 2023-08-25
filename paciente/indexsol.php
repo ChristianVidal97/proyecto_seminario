@@ -13,7 +13,7 @@ include_once "../model/conect.php";
      
 <div class="container card">
       <form class="p-4" >
-      <a class="btn btn-primary" href="homestudent.php" role="button">Regresar</a>
+      <a class="btn btn-primary" href="homespaciente.php" role="button">Regresar</a>
       </form>
       <?php
       if (isset($_GET['mensaje']) and $_GET['mensaje'] == 'upload') {
@@ -28,42 +28,40 @@ include_once "../model/conect.php";
       ?>
       <div class="mt-5 text-primary text-center">
       <?php if($result->num_rows > 0){
-      ///ya tiene registrado un proyecto
      ?>
-      <h1>Editar Solicitud</h1>
+      <h1>Editar Cita</h1>
       <?php }else{
-      ///registrar un proyecto
      ?>
-      <h1>Registrar Solicitud</h1>
+      <h1>solicitar cita medica</h1>
       <?php }
-      ///registrar un proyecto nuevo
+      
      ?>
       </div>
       <br>
 
       <form class="p-4" method="POST" action="datossol.php">
       <a class="btn btn-primary btn-lg" href="descargar.php?id=<?php echo $id ?>" role="button">Enviar Documento</a>
-      (ENVIA TU DOCUMENTO PRIMERO)<br><br> 
+      (suba su documento de identidad)<br><br> 
 
           <div class="mb-3">
             <input type="number" class="form-control" name="txtIdsolicitud" value="<?php echo $id ?>" hidden required>
           </div>
           <div class="mb-3">
-            <label class="form-label">Nombre Proyecto: </label>
+            <label class="form-label">Asunto de la Cita </label>
             <input type="text" class="form-control" name="txtNombredoc" autofocus required>
           </div>
           <div class="mb-3">
-            <label class="form-label">Asunto: </label>
+            <label class="form-label">Tipo de Medico </label>
             <input type="text" class="form-control" name="txtAsunto" autofocus required>
           </div>
           <div class="mb-3">
-                <label class="form-label">Digite su solicitud: </label>
+                <label class="form-label">Describa su Motivo </label>
                 <textarea type="text" class="form-control" name="txtSolicitud" rows="4" cols="50" 
                   placeholder="Max 100 caracteres" autofocus required></textarea>
                 </div>
           <div class="d-grid">
             <input type="hidden" name="oculto" value="1">
-            <input type="submit" class="btn btn-outline-success mt-3 w-100" value="Hacer solicitud">
+            <input type="submit" class="btn btn-outline-success mt-3 w-100" value="Solicitar Cita">
           </div>
         </form>
       </div>
