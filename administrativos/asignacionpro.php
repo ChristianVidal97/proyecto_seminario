@@ -93,7 +93,7 @@ if (!isset($_SESSION['usuario'])) {
       <div class="card">
         <did class="card-header">
           <div class="text-center">
-            Listado de proyectos
+            Listado de citas
           </div>
         </did>
         <div class="p-6">
@@ -151,5 +151,3 @@ foreach ($persona3 as $dato3) {
     </div>
   </div>
 </div>
-
-<?php include '../template/footer.php.' ?>

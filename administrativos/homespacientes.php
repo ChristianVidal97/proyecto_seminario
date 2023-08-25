@@ -133,5 +133,3 @@ if (!isset($_SESSION['usuario'])) {
     </div>
   </div>
 </div>
-
-<?php include '../template/footer.php.' ?>

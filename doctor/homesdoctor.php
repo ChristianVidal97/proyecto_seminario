@@ -101,7 +101,7 @@ if (isset($persona3->nombre)) {
       <div class="card">
         <did class="card-header">
           <div class="text-center">
-            Información del docente
+            Información del doctor
           </div>
         </did>
         <div class="p-4">
@@ -158,4 +158,3 @@ if (isset($persona3->nombre)) {
   </div>
 </div>
 
-<?php include '../template/footer.php.' ?>

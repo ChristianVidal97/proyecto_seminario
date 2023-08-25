@@ -29,10 +29,6 @@
             <input type="text" class="form-control" name="txtApellido" required value="<?php echo $persona->apellido; ?>">
           </div>
           <div class="mb-3">
-            <label class="form-label">Facultad: </label>
-            <input type="text" class="form-control" name="txtFacultad" required value="<?php echo $persona->facultad; ?>">
-          </div>
-          <div class="mb-3">
             <label class="form-label">Documento: </label>
             <input type="number" class="form-control" name="txtDocumento" required value="<?php echo $persona->documento; ?>">
           </div>
@@ -52,4 +48,3 @@
     </div>
   </div>
 </div>
-<?php include '../template/footer.php.'?>

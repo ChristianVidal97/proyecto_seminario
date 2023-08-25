@@ -92,7 +92,7 @@ if (!isset($_SESSION['usuario'])) {
       <div class="card">
         <did class="card-header">
           <div class="text-center">
-            Lista de personas
+            Lista de administrativos
           </div>
         </did>
         <div class="p-6">
@@ -135,5 +135,3 @@ if (!isset($_SESSION['usuario'])) {
     </div>
   </div>
 </div>
-
-<?php include '../template/footer.php.' ?>

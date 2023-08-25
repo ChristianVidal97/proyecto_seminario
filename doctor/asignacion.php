@@ -177,5 +177,3 @@ if($result->num_rows > 0){
   <br>
 </div>
 <br>
-
-<?php include '../template/footer.php.' ?>
