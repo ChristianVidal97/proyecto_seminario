@@ -12,13 +12,13 @@
     $documento = $_POST["txtDocumento"];
     $correo = $_POST["txtCorreo"];
     $password = $_POST["txtPass"];  
-    $sentencia = $bd ->prepare("UPDATE paciente SET nombre = ?, apellido = ?, documento = ?, correo = ?, contra = ? where id = ?;");
+    $sentencia = $bd ->prepare("UPDATE paciente SET nombre = ?, apellido = ?, documento = ?, correo = ?, contra = ? where codigo = ?;");
     $resultado = $sentencia->execute([$nombre,$apellido,$documento,$correo,$password,$codigo]);
 
     if ($resultado === TRUE) {
-      header('Location: homestudent.php?mensaje=editado');
+      header('Location: homespaciente.php?mensaje=editado');
     } else {
-      header('Location: homestudent.php?mensaje=error');
+      header('Location: homespaciente.php?mensaje=error');
       exit();
     }
     

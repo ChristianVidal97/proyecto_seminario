@@ -101,18 +101,18 @@ if (!isset($_SESSION['usuario'])) {
             <thead>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nombre Proyecto</th>
-                <th scope="col">Asunto</th>
-                <th scope="col">Nombre del estudiante</th>
-                <th scope="col">Nombre del docente</th>
+                <th scope="col">Dolencia</th>
+                <th scope="col">Tipo de doctor</th>
+                <th scope="col">Nombre del paciente</th>
+                <th scope="col">Nombre del doctor</th>
               </tr>
             </thead>
             <tbody>
               <?php
               foreach ($persona as $dato) {
-                $idest=$dato->solicitante;
+                $idpac=$dato->solicitante;
                 
-                $idpro=$dato->idDocente;
+                $iddoc=$dato->idDoctor;
                 
 
               ?>
@@ -121,7 +121,7 @@ if (!isset($_SESSION['usuario'])) {
                     <td><?php echo $dato->nombredoc; ?></td>
                     <td><?php echo $dato->asunto; ?></td>
                     <?php 
-    if ($idest>0) {$est = $bd->query("select * from estudiante where codigo=$idest");
+    if ($idpac>0) {$est = $bd->query("select * from paciente where codigo=$idpac");
 $estudiante = $est->fetchAll(PDO::FETCH_OBJ);
 
 foreach ($estudiante as $dato2) {
@@ -129,9 +129,9 @@ foreach ($estudiante as $dato2) {
 
 ?><td><?php echo $dato2->nombre.' '.$dato2->apellido; ?></td>
                     <?php }} 
-    if ($idpro>0) {
-      $profesor = $bd->query("select * from profesores where codigo=$idpro");
-$persona3 = $profesor->fetchAll(PDO::FETCH_OBJ);
+    if ($iddoc>0) {
+      $doctor = $bd->query("select * from doctores where codigo=$iddoc");
+$persona3 = $doctor->fetchAll(PDO::FETCH_OBJ);
     
 
 foreach ($persona3 as $dato3) {

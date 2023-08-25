@@ -20,7 +20,6 @@ if (!isset($_SESSION['usuario'])) {
 $iddoc=0;
 $msg="";
 $nombre="NN";
-$facultad="NN";
 $correo="NN";
 
 $comentario='No hay comentarios';
@@ -174,7 +173,7 @@ if($result->num_rows > 0){
 
         <?php }else{ ?>
           <div class="text-center">
-            No tienes Proyecto Asignado
+            No tienes cita
           </div>
         <?php } ?>
 

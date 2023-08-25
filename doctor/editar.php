@@ -7,7 +7,7 @@
     }      
     include_once '../model/conexion.php';
     $codigo = $_GET['codigo'];
-    $sentecia = $bd->prepare("select * from profesores where codigo =?;");
+    $sentecia = $bd->prepare("select * from doctores where codigo =?;");
     $sentecia->execute([$codigo]);
     $persona = $sentecia->fetch(PDO::FETCH_OBJ);
     //print_r($persona);

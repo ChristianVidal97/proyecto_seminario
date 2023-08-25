@@ -99,10 +99,9 @@ if (!isset($_SESSION['usuario'])) {
           <table class="table aling-middle">
             <thead>
               <tr>
-                <th scope="col">Id Docente</th>
-                <th scope="col">Proyecto</th>
+                <th scope="col">Id Doctor</th>
+                <th scope="col">Motivo de cita</th>
                 <th scope="col">Comentario</th>
-                <th scope="col">Calificación</th>
               </tr>
             </thead>
             <tbody>
@@ -113,10 +112,9 @@ if (!isset($_SESSION['usuario'])) {
                   <tr>
                     <td scope="row"><?php 
                     
-                    echo $dato->idDocente; ?></td>
+                    echo $dato->idDoctor; ?></td>
                     <td><?php echo $dato->nombredoc; ?></td>
                     <td><?php echo $dato->comentarios; ?></td>
-                    <td><?php echo $dato->calificacion; ?></td>
                     </tr>
               <?php
                 

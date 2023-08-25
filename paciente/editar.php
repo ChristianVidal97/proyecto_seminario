@@ -6,9 +6,9 @@
       exit();
     }      
     include_once '../model/conexion.php';
-    $id = $_GET['codigo'];
-    $sentecia = $bd->prepare("select * from paciente where id =?;");
-    $sentecia->execute([$id]);
+    $codigo = $_GET['codigo'];
+    $sentecia = $bd->prepare("select * from paciente where codigo =?;");
+    $sentecia->execute([$codigo]);
     $persona = $sentecia->fetch(PDO::FETCH_OBJ);
     //print_r($persona);
 ?>
@@ -41,7 +41,7 @@
             <input type="text" class="form-control" name="txtPass" required value="<?php echo $persona->contra; ?>">
           </div>
           <div class="d-grid">
-            <input type="hidden" name="codigo" value="<?php echo $persona->id; ?>">
+            <input type="hidden" name="codigo" value="<?php echo $persona->codigo; ?>">
             <input type="submit" class="btn btn-primary" value="Guardar Cambios">
           </div>
         </form>

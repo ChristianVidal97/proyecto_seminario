@@ -2,8 +2,7 @@
 
 <div class="container card">
   <form class="p-4">
-    <a class="btn btn-primary" href="../index.php" role="button">UDENAR</a>
-    <a class="btn btn-primary" href="../prueba/index.php" role="button">Reporte de notas</a>
+    <a class="btn btn-primary" href="../index.php" role="button">INICIO</a>
   </form>
 
   <div class="mt-5 text-primary text-center">
@@ -31,22 +30,17 @@
   <div class="container card">
     <div class="d-grid">
       <input type="hidden" name="oculto" value="1">
-      <a href="homesolicitud.php" class="btn btn-outline-success m-3">Solicitudes</a>
+      <a href="homesolicitud.php" class="btn btn-outline-success m-3">Citas Pendientes</a>
     </div>
   </div>
   </form>
 </div>
-<div class="container card">
-  <div class="d-grid">
-    <input type="hidden" name="oculto" value="1">
-    <a href="homescomentario.php" class="btn btn-outline-danger m-3">Comentarios de proyectos - Docente</a>
-  </div>
   </form>
 </div>
 <div class="container card">
   <div class="d-grid">
     <input type="hidden" name="oculto" value="1">
-    <a href="asignacionpro.php" class="btn btn-outline-warning m-3">Proyectos</a>
+    <a href="asignacionpro.php" class="btn btn-outline-warning m-3">Citas</a>
   </div>
   </form>
   <br>

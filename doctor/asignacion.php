@@ -3,9 +3,6 @@
 <?php
 include_once "../model/conexion.php";
 include_once "../model/conect.php";
-// $sentencia = $bd->query("select * from asesoresest");
-// $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
-//print_r($persona);
 ?>
 
 <?php
@@ -17,9 +14,6 @@ if (!isset($_SESSION['usuario'])) {
   header('Location: index.html');
   exit();
 }
-// $sentencia = $bd->query("select * from profesores");
-// $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
-// print_r($persona);
 $idest=0;
 $msg="";
 $comentario='No hay comentarios';
@@ -38,7 +32,7 @@ if($result->num_rows > 0){
     $solicitud=$row['solicitud'];
     $idsolicitud=$row['idsolicitud'];
   }
-  $sql2 = "SELECT * FROM paciente WHERE id = '$idest'";
+  $sql2 = "SELECT * FROM paciente WHERE codigo = '$idest'";
   $paciente = $mysqli->query($sql2);
   while ($row=$paciente->fetch_assoc() ) {
     $nombre=$row['nombre'].' '.$row['apellido'];
@@ -164,7 +158,7 @@ if($result->num_rows > 0){
         </div>
         <div class="card-body">
           <div class="text-center">
-            <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">Documento del paciente</a>
+            <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">Paciente asignado</a>
           
           </div>
         </div>

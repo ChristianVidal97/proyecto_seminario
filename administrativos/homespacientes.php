@@ -2,8 +2,6 @@
 
 <form class="p-4" >
 <a class="btn btn-primary" href="home.php" role="button">Administrativos</a>
-<!-- <td><a alingn = "center" class="btn btn-primary" href="../administrativos/asesorestadm.php" role="button">
-  Informacion Jurados Y Asesores</a> -->
 </form>
 
 <?php
@@ -105,7 +103,7 @@ if (!isset($_SESSION['usuario'])) {
                 <th scope="col">Apellido</th>
                 <th scope="col">Documento</th>
                 <th scope="col" colspan="2">Opciones</th>
-                <!-- <th scope="col">Asignar</th> -->
+              
               </tr>
             </thead>
             <tbody>
@@ -118,10 +116,8 @@ if (!isset($_SESSION['usuario'])) {
                     <td><?php echo $dato->apellido; ?></td>
                     <td><?php echo $dato->documento; ?></td>
                     <td><a class="text-success" href="editarest.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-pencil-square"></i></a></td>
-                    <td><a onclick="return confirm('¿Estas Seguro de eliminar esta cuenta?')" class="text-danger" href="eliminarest.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-trash3-fill"></a></td>
-                    <!-- <td><a alingn = "center" class="btn btn-primary" href="../administrativos/asesoresest.php" role="button">Datos</a>
-                    
-                    </td> -->
+                    <td><a onclick="return confirm('¿Estas Seguro de eliminar esta cuenta?')" class="text-danger" href="eliminarpac.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-trash3-fill"></a></td>
+                   
                   
                   </tr>
               <?php

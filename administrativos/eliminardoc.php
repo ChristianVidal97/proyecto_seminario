@@ -7,13 +7,13 @@
     include '../model/conexion.php';
     $codigo = $_GET['codigo'];
 
-    $sentencia = $bd->prepare("DELETE FROM profesores where codigo =?;");
+    $sentencia = $bd->prepare("DELETE FROM doctores where codigo =?;");
     $resultado = $sentencia->execute([$codigo]);
 
     if ($resultado === TRUE) {
-      header('Location: ../administrativos/homesdocente.php?mensaje=eliminado');
+      header('Location: ../administrativos/homesdoctor.php?mensaje=eliminado');
     } else {
-      header('Location: ../administrativos/homesdocente.php?mensaje=error');
+      header('Location: ../administrativos/homesdoctor.php?mensaje=error');
       exit();
     }
     

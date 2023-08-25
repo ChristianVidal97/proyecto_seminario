@@ -117,14 +117,14 @@ if (!isset($_SESSION['usuario'])) {
               foreach ($persona as $dato) {
                 if ($dato->documento == $_SESSION['usuario']) {
                   # code...
-                  $id=$dato->id;
+                  $id=$dato->codigo;
                   // echo $id;
               ?>
                   <tr>
                     <td scope="row"><?php echo $dato->nombre; ?></td>
                     <td><?php echo $dato->apellido; ?></td>
 
-                    <td><a class="text-success" href="editar.php?codigo=<?php echo $dato->id; ?>"><i class="bi bi-pencil-square"></i></a></td>
+                    <td><a class="text-success" href="editar.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-pencil-square"></i></a></td>
                     
                   </tr>
                   <thead>
@@ -192,18 +192,7 @@ if (!isset($_SESSION['usuario'])) {
           $persona4 = $setencia3->fetch(PDO::FETCH_OBJ);
           //print_r($persona);
           ?>
-          <?php
-          include "../model/conexion.php";
-          $setencia4 = $bd->prepare("select * from comentarios where idproyecto =?;");
-          $setencia4->execute([$idsoli]);
-          $persona5 = $setencia4->fetch(PDO::FETCH_OBJ);
-          if (isset($persona5->comentario)) {
-            $comentariobd = $persona5->comentario;
-          }else{
-            $comentariobd = NULL;
-          }
-          //print_r($persona);
-          ?>
+          
           <?php
           include "../model/conexion.php";
           $setencia5 = $bd->prepare("select * from solicitudes where idsolicitud =?;");

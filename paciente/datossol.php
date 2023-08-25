@@ -29,7 +29,7 @@
     }
     
     if ($resultado === TRUE) {
-      header('Location: ../paciente/homestudent.php?mensaje=registrado');
+      header('Location: ../paciente/homespaciente.php?mensaje=registrado');
     } else {
       echo "error";
     }
